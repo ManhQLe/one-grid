@@ -1,0 +1,28 @@
+
+.one-grid{            
+    display: flex;
+    &[host-section]{
+        position: relative;        
+        & > div {
+            position: absolute;
+        }
+    }
+
+    .header{
+        overflow: hidden;
+        margin-right: 17px;
+        & > div{
+            height: 100%;
+        }
+    }
+
+    .body{        
+    }
+    .footer{
+        margin-right: 17px;
+        overflow: hidden;
+        & > div{
+            height: 100%;
+        }
+    }
+}
