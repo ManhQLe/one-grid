@@ -7,15 +7,16 @@
         }
     }
 
-    .header{
+    &>.header{
         overflow: hidden;
         & > div{
             height: 100%;            
         }
     }
-    .body{        
+    &>.body{
+
     }
-    .footer{
+    &>.footer{
         overflow: hidden;
         & > div{
             height: 100%;

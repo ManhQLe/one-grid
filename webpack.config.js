@@ -1,21 +1,32 @@
 const path = require("path")
-const {watch} = require("gulp")
+const { watch } = require("gulp")
+const sass = require("sass")
+const fs = require("fs");
+const isProd = process.env.WEBPACK_MODE === 'production';
 
+let watchPath = "src/*.scss"
 
-const sassModules = [{
-    input:""
-}];
-let srcPath = "./src/*.scss"
-console.log(srcPath)
-
-const watcher = new watch([srcPath]);
+const watcher = new watch([watchPath]);
 
 watcher.on('change', function (filePath) {
-    console.log(path.resolve(filePath))
-    console.log(`File ${filePath} was changed`);
+    console.log(`${filePath} was changed`)
+    let outPath = isProd
+    ? "./build/onegrid.css"
+    : "./public/onegrid/onegrid.css"
+
+    sass.render({
+        file: path.resolve("./src/index.scss"),
+        outputStyle: isProd ? "compressed" : "expanded",        
+    }, function (error, result) { 
+        if(error)
+            console.log(error);        
+        else
+            fs.writeFile(path.resolve(outPath),result.css,'utf8',(err)=>{
+                if(err)
+                    console.log(err)
+            })
+    })
 })
-
-
 
 const modules = process.env.WEBPACK_MODE === 'production' ?
     {
