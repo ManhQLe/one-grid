@@ -8,8 +8,7 @@ let watchPath = "src/*.scss"
 
 const watcher = new watch([watchPath]);
 
-watcher.on('change', function (filePath) {
-    console.log(`${filePath} was changed`)
+function compileSass(filePath){
     let outPath = isProd
     ? "./build/onegrid.css"
     : "./public/onegrid/onegrid.css"
@@ -26,6 +25,12 @@ watcher.on('change', function (filePath) {
                     console.log(err)
             })
     })
+}
+
+
+watcher.on('change', function (filePath) {
+    console.log(`${filePath} was changed`)
+    compileSass(filePath);
 })
 
 const modules = process.env.WEBPACK_MODE === 'production' ?
