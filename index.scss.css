@@ -1,0 +1,15 @@
+.one-grid {
+  display: flex; }
+  .one-grid[host-section] {
+    position: relative; }
+    .one-grid[host-section] > div {
+      position: absolute; }
+  .one-grid .header {
+    overflow: hidden; }
+    .one-grid .header > div {
+      height: 100%; }
+  .one-grid .footer {
+    overflow: hidden; }
+    .one-grid .footer > div {
+      height: 100%; }
+

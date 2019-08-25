@@ -1,4 +1,3 @@
-
 .one-grid{            
     display: flex;
     &[host-section]{
@@ -10,16 +9,13 @@
 
     .header{
         overflow: hidden;
-        margin-right: 17px;
         & > div{
-            height: 100%;
+            height: 100%;            
         }
     }
-
     .body{        
     }
     .footer{
-        margin-right: 17px;
         overflow: hidden;
         & > div{
             height: 100%;

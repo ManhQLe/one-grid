@@ -1,16 +1,20 @@
-import GridAgr from './GridAgr'
+function OneGrid(agrs) {    
+    this.agrs = agrs
+    let root = document.createElement("div")
+    this._root = root    
 
-
-
-class OneGrid {        
-    constructor(agrs){        
-        this.agrs = new GridAgr(agrs)
+    root.setAttribute("class","one-grid");
+    root.innerHTML = "<div class='head' host-section></div><div class='body' host-section></div><div class='footer' host-section></div>"
         
-    }
+}
 
-    render(){
-    }
+OneGrid.prototype.setData = function(data){
+    this.agrs.Data = data;    
+}
+
+OneGrid.prototype.render = function(toDom) {
+    toDom.appendChild(this._root);
 }
 
 
-export default OnGrid
+module.exports = OneGrid

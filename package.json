@@ -4,8 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "build": "node_modules/.bin/webpack --mode production",
+    "build-dev": "node_modules/.bin/webpack --watch --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "gulp": "^4.0.2",
+    "live-server": "^1.2.1",
+    "sass": "^1.22.10",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
+  }
 }
